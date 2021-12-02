@@ -7,6 +7,9 @@ export class HeaderComponent extends Component {
     }
 
     init() {
+        if (localStorage.getItem('visited')) { // условие скрывает header если пользователь посещал страницу
+            this.hide()
+        }
         const btn = this.$el.querySelector('.js-header-start')
         btn.addEventListener('click', buttonHandler.bind(this))
      } 
@@ -14,5 +17,6 @@ export class HeaderComponent extends Component {
 
 
 function buttonHandler() {
+    localStorage.setItem('visited', JSON.stringify(true))
     this.hide()
 }
