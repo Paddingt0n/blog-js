@@ -11,6 +11,6 @@ export class Component {
     }
     // метод show, обращается к текущему элементу, его класс листу и добавляет класс hide 
     show(){
-        this.$el.classList.removeы('hide')
+        this.$el.classList.remove('hide')
     }
 }
